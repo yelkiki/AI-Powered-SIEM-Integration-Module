@@ -1,0 +1,271 @@
+2025-06-28 19:00:05,487 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-28 19:00:05,545 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-28 19:00:05,545 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-28 19:00:05,547 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 19:00:06,743 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-28 19:00:06,758 - werkzeug - WARNING -  * Debugger is active!
+2025-06-28 19:00:06,767 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-28 19:00:08,755 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 19:00:08] "GET / HTTP/1.1" 200 -
+2025-06-28 19:00:08,842 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 19:00:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-06-28 19:02:09,171 - werkzeug - INFO -  * Detected change in 'C:\\Users\\LENOVO\\Desktop\\Seamless Integration Component SIEM\\Version 2 After Cursor\\logstash_config_generator\\src\\main.py', reloading
+2025-06-28 19:02:09,302 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 19:02:11,154 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-28 19:02:11,175 - werkzeug - WARNING -  * Debugger is active!
+2025-06-28 19:02:11,184 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-28 19:03:18,901 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-28 19:03:18,933 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-28 19:03:18,934 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-28 19:03:18,938 - werkzeug - INFO -  * Restarting with stat
+2025-06-28 19:03:20,196 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-28 19:03:20,206 - werkzeug - WARNING -  * Debugger is active!
+2025-06-28 19:03:20,213 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-28 19:03:26,578 - werkzeug - INFO - 127.0.0.1 - - [28/Jun/2025 19:03:26] "GET / HTTP/1.1" 200 -
+2025-06-30 05:49:14,681 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 05:49:14,756 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-30 05:49:14,757 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-30 05:49:14,759 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 05:49:16,313 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 05:49:16,325 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 05:49:16,345 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 05:49:22,200 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 05:49:22] "GET / HTTP/1.1" 200 -
+2025-06-30 05:52:29,759 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 05:52:29,784 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-30 05:52:29,785 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-30 05:52:29,788 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 05:52:31,293 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 05:52:31,309 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 05:52:31,320 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 05:52:32,806 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 05:52:32] "GET / HTTP/1.1" 200 -
+2025-06-30 05:52:33,584 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 05:52:33] "GET / HTTP/1.1" 200 -
+2025-06-30 05:55:07,550 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 05:55:07,575 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-30 05:55:07,576 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-30 05:55:07,578 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 05:55:09,401 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 05:55:09,439 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 05:55:09,460 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 05:55:10,489 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 05:55:10] "GET / HTTP/1.1" 200 -
+2025-06-30 05:55:11,128 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 05:55:11] "GET / HTTP/1.1" 200 -
+2025-06-30 05:55:18,027 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 05:55:18] "GET / HTTP/1.1" 200 -
+2025-06-30 05:58:18,560 - werkzeug - INFO -  * Detected change in 'C:\\Users\\LENOVO\\Desktop\\Seamless Integration Component SIEM\\Version 2 After Cursor\\logstash_config_generator\\src\\main.py', reloading
+2025-06-30 05:58:18,921 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 05:58:21,517 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 05:58:21,532 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 05:58:21,537 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 05:59:25,947 - werkzeug - INFO -  * Detected change in 'C:\\Users\\LENOVO\\Desktop\\Seamless Integration Component SIEM\\Version 2 After Cursor\\logstash_config_generator\\src\\main.py', reloading
+2025-06-30 05:59:26,118 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 06:03:03,826 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:03:03,856 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-30 06:03:03,857 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-30 06:03:03,860 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 06:03:05,250 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:03:05,261 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 06:03:05,269 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 06:03:12,838 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:03:12] "GET / HTTP/1.1" 200 -
+2025-06-30 06:03:17,695 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:03:17] "GET / HTTP/1.1" 200 -
+2025-06-30 06:03:18,128 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:03:18] "GET / HTTP/1.1" 200 -
+2025-06-30 06:03:18,304 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:03:18] "GET / HTTP/1.1" 200 -
+2025-06-30 06:03:18,439 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:03:18] "GET / HTTP/1.1" 200 -
+2025-06-30 06:03:18,591 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:03:18] "GET / HTTP/1.1" 200 -
+2025-06-30 06:03:44,824 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:03:44] "GET / HTTP/1.1" 200 -
+2025-06-30 06:04:45,629 - werkzeug - INFO -  * Detected change in 'C:\\Users\\LENOVO\\Desktop\\Seamless Integration Component SIEM\\Version 2 After Cursor\\logstash_config_generator\\src\\main.py', reloading
+2025-06-30 06:04:45,836 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 06:05:21,345 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:05:21,363 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-30 06:05:21,364 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-30 06:05:21,366 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 06:05:22,872 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:05:22,894 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 06:05:22,914 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 06:05:27,099 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:05:27] "GET / HTTP/1.1" 200 -
+2025-06-30 06:05:28,776 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:05:28] "GET / HTTP/1.1" 200 -
+2025-06-30 06:05:28,935 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:05:28] "GET / HTTP/1.1" 200 -
+2025-06-30 06:05:29,079 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:05:29] "GET / HTTP/1.1" 200 -
+2025-06-30 06:05:29,222 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:05:29] "GET / HTTP/1.1" 200 -
+2025-06-30 06:21:20,959 - werkzeug - INFO -  * Detected change in 'C:\\Users\\LENOVO\\Desktop\\Seamless Integration Component SIEM\\Version 2 After Cursor\\logstash_config_generator\\src\\main.py', reloading
+2025-06-30 06:21:21,205 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 06:22:02,208 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:22:02,232 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-30 06:22:02,232 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-30 06:22:02,237 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 06:22:03,716 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:22:03,728 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 06:22:03,737 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 06:22:04,635 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:22:04] "GET / HTTP/1.1" 200 -
+2025-06-30 06:22:37,042 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:22:37] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-06-30 06:22:37,165 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:22:37] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-06-30 06:22:37,178 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:22:37] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-06-30 06:22:37,240 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:22:37] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-06-30 06:22:37,250 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:22:37] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-06-30 06:22:48,108 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:22:48] "GET / HTTP/1.1" 200 -
+2025-06-30 06:23:13,120 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:23:13] "GET / HTTP/1.1" 200 -
+2025-06-30 06:23:22,696 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:23:22] "GET / HTTP/1.1" 200 -
+2025-06-30 06:26:15,996 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:26:15] "GET / HTTP/1.1" 200 -
+2025-06-30 06:26:33,508 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:26:33] "POST /generate HTTP/1.1" 200 -
+2025-06-30 06:26:49,000 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:26:49] "POST /generate HTTP/1.1" 200 -
+2025-06-30 06:26:54,182 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:26:54] "POST /generate HTTP/1.1" 200 -
+2025-06-30 06:29:35,771 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:29:35] "GET / HTTP/1.1" 200 -
+2025-06-30 06:29:44,285 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:29:44,306 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-30 06:29:44,307 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-30 06:29:44,310 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 06:29:46,060 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:29:46,075 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 06:29:46,086 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 06:29:46,726 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:29:46] "GET / HTTP/1.1" 200 -
+2025-06-30 06:29:46,886 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:29:46] "GET / HTTP/1.1" 200 -
+2025-06-30 06:29:47,086 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:29:47] "GET / HTTP/1.1" 200 -
+2025-06-30 06:29:47,439 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:29:47] "GET / HTTP/1.1" 200 -
+2025-06-30 06:29:47,590 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:29:47] "GET / HTTP/1.1" 200 -
+2025-06-30 06:29:47,735 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:29:47] "GET / HTTP/1.1" 200 -
+2025-06-30 06:31:41,719 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:31:41] "GET / HTTP/1.1" 200 -
+2025-06-30 06:40:25,369 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:40:25] "GET / HTTP/1.1" 200 -
+2025-06-30 06:43:01,185 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:43:01] "GET / HTTP/1.1" 200 -
+2025-06-30 06:44:39,090 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:44:39,117 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-30 06:44:39,119 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-30 06:44:39,122 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 06:44:40,438 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:44:40,449 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 06:44:40,456 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 06:44:42,312 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:44:42] "GET / HTTP/1.1" 200 -
+2025-06-30 06:46:40,033 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:46:40] "GET / HTTP/1.1" 200 -
+2025-06-30 06:46:50,968 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:46:50] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-30 06:51:48,679 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:51:48,708 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-30 06:51:48,709 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-30 06:51:48,711 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 06:51:50,229 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:51:50,248 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 06:51:50,256 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 06:51:50,881 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:51:50] "GET / HTTP/1.1" 200 -
+2025-06-30 06:52:01,833 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:52:01] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-30 06:53:51,076 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:53:51] "GET / HTTP/1.1" 200 -
+2025-06-30 06:53:51,102 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:53:51] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-30 06:54:34,314 - __main__ - INFO - Generating filter for log source: Azure_AD
+2025-06-30 06:54:55,966 - __main__ - INFO - Successfully generated filter for Azure_AD
+2025-06-30 06:54:55,968 - __main__ - INFO - Running command: sudo -u logstash /usr/share/logstash/bin/logstash --path.settings /etc/logstash -t -f /tmp/test_filter_7bbd3ef5.conf
+2025-06-30 06:54:55,994 - __main__ - ERROR - Command failed: Command 'sudo -u logstash /usr/share/logstash/bin/logstash --path.settings /etc/logstash -t -f /tmp/test_filter_7bbd3ef5.conf' returned non-zero exit status 1.
+2025-06-30 06:54:55,996 - __main__ - INFO - Added custom log source: Azure_AD
+2025-06-30 06:54:56,009 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:54:56] "POST /generate HTTP/1.1" 200 -
+2025-06-30 06:54:56,048 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:54:56] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-06-30 06:57:20,547 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:57:20] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-06-30 06:57:20,629 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:57:20] "[36mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-06-30 06:57:20,631 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:57:20] "[36mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-06-30 06:57:20,645 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:57:20] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-06-30 06:57:20,657 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:57:20] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-06-30 06:57:29,806 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 06:57:29] "GET / HTTP/1.1" 200 -
+2025-06-30 06:58:44,416 - werkzeug - INFO -  * Detected change in 'C:\\Users\\LENOVO\\Desktop\\Seamless Integration Component SIEM\\Version 2 After Cursor\\logstash_config_generator\\src\\main.py', reloading
+2025-06-30 06:58:46,533 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 06:58:48,938 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:58:48,957 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 06:58:48,965 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 06:59:52,298 - werkzeug - INFO -  * Detected change in 'C:\\Users\\LENOVO\\Desktop\\Seamless Integration Component SIEM\\Version 2 After Cursor\\logstash_config_generator\\src\\main.py', reloading
+2025-06-30 06:59:52,391 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 06:59:53,785 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 06:59:53,805 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 06:59:53,819 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 07:00:16,346 - werkzeug - INFO -  * Detected change in 'C:\\Users\\LENOVO\\Desktop\\Seamless Integration Component SIEM\\Version 2 After Cursor\\logstash_config_generator\\src\\main.py', reloading
+2025-06-30 07:00:16,506 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 07:00:18,301 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 07:00:18,313 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 07:00:18,322 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 07:00:31,896 - werkzeug - INFO -  * Detected change in 'C:\\Users\\LENOVO\\Desktop\\Seamless Integration Component SIEM\\Version 2 After Cursor\\logstash_config_generator\\src\\main.py', reloading
+2025-06-30 07:00:32,211 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 07:00:34,323 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 07:00:34,334 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 07:00:34,341 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 07:00:37,313 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 07:00:37] "GET / HTTP/1.1" 200 -
+2025-06-30 07:03:12,295 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 07:03:12] "GET / HTTP/1.1" 200 -
+2025-06-30 07:06:30,375 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 07:06:30] "GET / HTTP/1.1" 200 -
+2025-06-30 07:11:48,647 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 07:11:48] "GET / HTTP/1.1" 200 -
+2025-06-30 07:14:35,728 - werkzeug - INFO -  * Detected change in 'C:\\Users\\LENOVO\\Desktop\\Seamless Integration Component SIEM\\Version 2 After Cursor\\logstash_config_generator\\src\\main.py', reloading
+2025-06-30 07:14:35,909 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 07:14:37,872 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 07:14:37,887 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 07:14:37,897 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 07:14:45,504 - werkzeug - INFO -  * Detected change in 'C:\\Users\\LENOVO\\Desktop\\Seamless Integration Component SIEM\\Version 2 After Cursor\\logstash_config_generator\\src\\main.py', reloading
+2025-06-30 07:14:45,664 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 07:14:48,281 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 07:14:48,295 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 07:14:48,305 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 07:16:09,174 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 07:16:09,195 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-30 07:16:09,196 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-30 07:16:09,198 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 07:16:11,125 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 07:16:11,141 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 07:16:11,148 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 07:16:12,748 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 07:16:12] "GET / HTTP/1.1" 200 -
+2025-06-30 07:16:12,770 - __main__ - WARNING - Failed to scan Logstash config directory: [WinError 3] The system cannot find the path specified: '/etc/logstash/conf.d'
+2025-06-30 07:16:12,771 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 07:16:12] "GET /api/used-ports HTTP/1.1" 200 -
+2025-06-30 07:16:34,833 - __main__ - WARNING - Failed to scan Logstash config directory: [WinError 3] The system cannot find the path specified: '/etc/logstash/conf.d'
+2025-06-30 07:16:34,834 - __main__ - INFO - Generating filter for log source: aws_cloudtrail
+2025-06-30 07:16:42,182 - __main__ - INFO - Successfully generated filter for aws_cloudtrail
+2025-06-30 07:16:42,184 - __main__ - INFO - Running command: sudo -u logstash /usr/share/logstash/bin/logstash --path.settings /etc/logstash -t -f /tmp/test_filter_e03dfdb3.conf
+2025-06-30 07:16:42,205 - __main__ - ERROR - Command failed: Command 'sudo -u logstash /usr/share/logstash/bin/logstash --path.settings /etc/logstash -t -f /tmp/test_filter_e03dfdb3.conf' returned non-zero exit status 1.
+2025-06-30 07:16:42,207 - __main__ - INFO - Added custom log source: aws_cloudtrail
+2025-06-30 07:16:42,218 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 07:16:42] "POST /generate HTTP/1.1" 200 -
+2025-06-30 07:16:42,236 - __main__ - WARNING - Failed to scan Logstash config directory: [WinError 3] The system cannot find the path specified: '/etc/logstash/conf.d'
+2025-06-30 07:16:42,237 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 07:16:42] "GET /api/used-ports HTTP/1.1" 200 -
+2025-06-30 07:17:02,874 - __main__ - WARNING - Failed to scan Logstash config directory: [WinError 3] The system cannot find the path specified: '/etc/logstash/conf.d'
+2025-06-30 07:17:02,876 - __main__ - INFO - Generating filter for log source: new_log
+2025-06-30 08:55:27,129 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 08:55:27,198 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-06-30 08:55:27,199 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-30 08:55:27,201 - werkzeug - INFO -  * Restarting with stat
+2025-06-30 08:55:28,468 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-06-30 08:55:28,484 - werkzeug - WARNING -  * Debugger is active!
+2025-06-30 08:55:28,492 - werkzeug - INFO -  * Debugger PIN: 140-827-888
+2025-06-30 08:55:34,554 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 08:55:34] "GET / HTTP/1.1" 200 -
+2025-06-30 08:55:34,661 - __main__ - WARNING - Failed to scan Logstash config directory: [WinError 3] The system cannot find the path specified: '/etc/logstash/conf.d'
+2025-06-30 08:55:34,662 - werkzeug - INFO - 127.0.0.1 - - [30/Jun/2025 08:55:34] "GET /api/used-ports HTTP/1.1" 200 -
+2025-07-01 00:20:47,752 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-07-01 00:20:47,835 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.19:5000
+2025-07-01 00:20:47,836 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-01 00:20:47,838 - werkzeug - INFO -  * Restarting with stat
+2025-07-01 00:20:49,969 - __main__ - INFO - Starting Logstash Filter Generator application
+2025-07-01 00:20:49,986 - werkzeug - WARNING -  * Debugger is active!
+2025-07-01 00:20:49,998 - werkzeug - INFO -  * Debugger PIN: 140-827-888

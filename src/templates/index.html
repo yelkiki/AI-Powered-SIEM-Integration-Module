@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logstash Filter Generator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .card {
+            margin-bottom: 20px;
+            border: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        .card-header {
+            background: linear-gradient(135deg, #343a40 0%, #495057 100%);
+            color: #fff;
+            border-radius: 10px 10px 0 0 !important;
+            padding: 15px 20px;
+            font-weight: 600;
+        }
+        .generated-config {
+            background: #e9e9e9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: monospace;
+            border: 1px solid #ccc;
+            height: 300px;
+        }
+        .form-control {
+            border-radius: 6px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+        .form-text {
+            color: #6c757d;
+            font-size: 0.875rem;
+            margin-top: 5px;
+        }
+        .alert {
+            border-radius: 8px;
+            border: none;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+        }
+        .upload-info {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        .upload-info h6 {
+            color: #1976d2;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .upload-info ul {
+            margin-bottom: 0;
+            padding-left: 20px;
+        }
+        .upload-info li {
+            color: #424242;
+            margin-bottom: 5px;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #3498db;
+            width: 20px;
+            height: 20px;
+            animation: spin 2s linear infinite;
+            display: none;
+            margin-left: 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        /* Validation styles */
+        .form-control.is-valid {
+            border-color: #28a745;
+            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+        }
+        
+        .form-control.is-invalid {
+            border-color: #dc3545;
+            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+        }
+        
+        .invalid-feedback {
+            display: none;
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 80%;
+            color: #dc3545;
+        }
+        
+        .valid-feedback {
+            display: none;
+            width: 100%;
+            margin-top: 0.25rem;
+            font-size: 80%;
+            color: #28a745;
+        }
+        
+        /* Dropdown container styles */
+        .custom-dropdown {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .dropdown-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ced4da;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .dropdown-options.show {
+            display: block;
+        }
+        
+        .option {
+            padding: 8px 12px;
+            cursor: pointer;
+            border-bottom: 1px solid #f8f9fa;
+            transition: background-color 0.2s;
+        }
+        
+        .option:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .option.highlighted {
+            background-color: #e3f2fd;
+            font-weight: bold;
+        }
+        
+        .option:last-child {
+            border-bottom: none;
+        }
+        
+        .custom-dropdown input:focus {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+        .custom-dropdown input:focus + .dropdown-options {
+            border-top: 1px solid #007bff;
+        }
+        
+        /* Highlighted search results */
+        select option[style*="background-color: rgb(227, 242, 253)"] {
+            background-color: #e3f2fd !important;
+            font-weight: bold !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center mb-4">
+            <h1>Logstash Filter Generator</h1>
+            <p class="lead">Generate Logstash filters for JSON output, perfect for Wazuh.</p>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-file-alt"></i> Input
+                    </div>
+                    <div class="card-body">
+                        {% if not api_key_set %}
+                            <div class="alert alert-warning">Warning: The <code>GEMINI_API_KEY</code> environment variable is not set.</div>
+                        {% endif %}
+                        <form id="generate-form" action="/generate" method="post">
+                            <div class="form-group">
+                                <label for="log_source_name">Log Source Name:</label>
+                                <div class="custom-dropdown">
+                                    <input type="text" class="form-control" id="log_source_input" 
+                                           placeholder="Type to search or enter custom log source..." 
+                                           value="{{ log_source_name or '' }}" 
+                                           oninput="showDropdown('log_source_input', 'log_source_dropdown')"
+                                           onfocus="showDropdown('log_source_input', 'log_source_dropdown')"
+                                           onblur="hideDropdown('log_source_dropdown')"
+                                           autocomplete="off">
+                                    <div class="dropdown-options" id="log_source_dropdown">
+                                        <div class="option" data-value="" onclick="selectOption('log_source_input', '', 'Select a log source...')">Select a log source...</div>
+                                        {% for source in log_sources %}
+                                            <div class="option" data-value="{{ source }}" onclick="selectOption('log_source_input', '{{ source }}', '{{ source }}')">{{ source }}</div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <input type="hidden" id="log_source_name" name="log_source_name" value="{{ log_source_name or '' }}" required>
+                                <div id="log_source_name_error" class="invalid-feedback"></div>
+                                <small class="form-text text-muted">Type to search existing log sources or enter a custom name. All names will be converted to lowercase.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="http_port">TCP Port:</label>
+                                <input type="number" class="form-control" id="http_port" name="http_port" 
+                                       value="{{ http_port or '' }}" min="5040" max="5100" required
+                                       oninput="validatePort(this)">
+                                <div id="http_port_error" class="invalid-feedback"></div>
+                                <small class="form-text text-muted">Port range: 5040-5100. Each log source needs a unique port.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="sample_logs">Sample Log Lines:</label>
+                                <textarea class="form-control" id="sample_logs" name="sample_logs" rows="5" required>{{ sample_logs_raw or '' }}</textarea>
+                                <small class="form-text text-muted">Paste 3-10 log lines, one per line (max 50 lines, 1000 chars per line)</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary generate-button" {% if not api_key_set %}disabled{% endif %}>
+                                <i class="fas fa-cogs"></i> Generate Filter
+                                <div class="loader"></div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-code"></i> Output
+                    </div>
+                    <div class="card-body">
+                        {% if generated_filter %}
+                            <p class="text-muted">This filter structures logs for JSON output, suitable for Wazuh.</p>
+                            <form action="/apply" method="post">
+                                <input type="hidden" name="log_source_name" value="{{ log_source_name }}">
+                                <input type="hidden" name="sample_logs_raw" value="{{ sample_logs_raw }}">
+                                <input type="hidden" name="http_port" value="{{ http_port or '' }}">
+                                <div class="form-group">
+                                    <label for="generated_filter">Generated Logstash Filter:</label>
+                                    <textarea id="generated_filter" name="generated_filter" class="form-control generated-config" readonly>{{ generated_filter }}</textarea>
+                                </div>
+                                {% if http_port %}
+                                <div class="alert alert-info">
+                                    <strong>TCP Input Configuration:</strong> This will create a TCP input on port <code>{{ http_port }}</code> for receiving log data.
+                                </div>
+                                {% endif %}
+                                <div class="alert alert-info">
+                                    <strong>Important:</strong> This will create a complete Logstash configuration with TCP input, filter, and JSON output for Wazuh.
+                                </div>
+                                <p class="text-muted mt-3"><small><i class="fas fa-info-circle"></i> Requires passwordless sudo for Logstash service management.</small></p>
+                                <button type="submit" class="btn btn-success" {% if not api_key_set %}disabled{% endif %}>
+                                    <i class="fas fa-check btn-icon"></i> Save & Reload
+                                </button>
+                            </form>
+                        {% else %}
+                            <p class="text-center text-muted">Generated filter will appear here.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-upload"></i> Upload Log File
+                    </div>
+                    <div class="card-body">
+                        {% if upload_error %}
+                        <div class="alert alert-danger" style="max-height:220px; overflow:auto; margin-bottom:15px;">
+                            <strong><i class="fas fa-exclamation-triangle"></i> Upload Error:</strong>
+                            <details open style="white-space:pre-wrap;">
+                                <summary style="cursor:pointer;">Show Details</summary>
+                                <pre style="font-size:0.95em; margin:0; background:none; border:none;">{{ upload_error }}</pre>
+                            </details>
+                        </div>
+                        {% endif %}
+                        <form action="/upload" method="post" enctype="multipart/form-data" id="upload-form">
+                            <div class="form-group">
+                                <label for="upload_log_source_name">Log Source Name:</label>
+                                <div class="custom-dropdown">
+                                    <input type="text" class="form-control" id="upload_log_source_input" 
+                                           placeholder="Type to search or enter custom log source..." 
+                                           value="{{ log_source_name or '' }}" 
+                                           oninput="showDropdown('upload_log_source_input', 'upload_log_source_dropdown')"
+                                           onfocus="showDropdown('upload_log_source_input', 'upload_log_source_dropdown')"
+                                           onblur="hideDropdown('upload_log_source_dropdown')"
+                                           autocomplete="off">
+                                    <div class="dropdown-options" id="upload_log_source_dropdown">
+                                        <div class="option" data-value="" onclick="selectOption('upload_log_source_input', '', 'Select a log source...')">Select a log source...</div>
+                                        {% for source in log_sources %}
+                                            <div class="option" data-value="{{ source }}" onclick="selectOption('upload_log_source_input', '{{ source }}', '{{ source }}')">{{ source }}</div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <input type="hidden" id="upload_log_source_name" name="log_source_name" value="{{ log_source_name or '' }}" required>
+                                <div id="upload_log_source_name_error" class="invalid-feedback"></div>
+                                <small class="form-text text-muted">Type to search existing log sources or enter a custom name. All names will be converted to lowercase.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="upload_file">Select Log File (CSV/Log/JSON):</label>
+                                <input type="file" class="form-control-file" id="upload_file" name="file" accept=".csv,.log,.json,.txt" required>
+                                <small class="form-text text-muted">Upload CSV, log, JSON, or TXT files for processing. File will be stored in /etc/logstash/log_files/</small>
+                            </div>
+                            <div class="upload-info">
+                                <h6><i class="fas fa-info-circle"></i> Upload Process</h6>
+                                <ul>
+                                    <li>File will be uploaded to <code>/etc/logstash/log_files/</code></li>
+                                    <li>Sample lines will be extracted for filter generation</li>
+                                    <li>AI-powered filter will be generated using Gemini API</li>
+                                    <li>Configuration will be generated with file input and filter</li>
+                                    <li>Output will be saved to <code>/var/log/logstash/normalized_{log_source_name}_logs.json</code></li>
+                                    <li>Logstash will be automatically reloaded</li>
+                                </ul>
+                            </div>
+                            <button type="submit" class="btn btn-primary generate-button" {% if not api_key_set %}disabled{% endif %}>
+                                <i class="fas fa-upload"></i> Upload & Generate Filter
+                                <div class="loader"></div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% if success %}
+            <div class="alert alert-success mt-4">
+                <h2>Configuration Applied</h2>
+                <p>{{ success }}</p>
+                {% if details %}
+                    <pre>{{ details }}</pre>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Show loader when form is submitted
+        document.getElementById('generate-form').addEventListener('submit', function() {
+            document.querySelector('.loader').style.display = 'inline-block';
+        });
+        // Show loader when upload form is submitted
+        document.getElementById('upload-form').addEventListener('submit', function() {
+            const uploadButton = this.querySelector('.generate-button');
+            setButtonLoading(uploadButton, true);
+        });
+        // Add loading state to buttons
+        function setButtonLoading(button, loading) {
+            if (loading) {
+                button.classList.add('btn-loading');
+                button.disabled = true;
+                const originalText = button.innerHTML;
+                button.setAttribute('data-original-text', originalText);
+                button.innerHTML = button.innerHTML.replace(/<i class="[^"]*"><\/i>\s*/, '') + ' Loading...';
+            } else {
+                button.classList.remove('btn-loading');
+                button.disabled = false;
+                const originalText = button.getAttribute('data-original-text');
+                if (originalText) {
+                    button.innerHTML = originalText;
+                }
+            }
+        }
+        
+        // Initialize dropdowns on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize with current values if any
+            const logSourceInput = document.getElementById('log_source_input');
+            const uploadLogSourceInput = document.getElementById('upload_log_source_input');
+            
+            if (logSourceInput && logSourceInput.value) {
+                const hiddenInput = document.getElementById('log_source_name');
+                if (hiddenInput) {
+                    hiddenInput.value = logSourceInput.value;
+                    validateLogSourceName(hiddenInput);
+                }
+            }
+            if (uploadLogSourceInput && uploadLogSourceInput.value) {
+                const hiddenInput = document.getElementById('upload_log_source_name');
+                if (hiddenInput) {
+                    hiddenInput.value = uploadLogSourceInput.value;
+                    validateLogSourceName(hiddenInput);
+                }
+            }
+            
+            // Load used ports for validation
+            loadUsedPorts();
+            loadExistingConfs();
+        });
+        
+        // Global variable to store used ports
+        let usedPorts = [];
+        let existingConfs = [];
+        
+        // Load used ports from the API
+        async function loadUsedPorts() {
+            try {
+                const response = await fetch('/api/used-ports');
+                const data = await response.json();
+                if (data.used_ports) {
+                    usedPorts = data.used_ports;
+                }
+            } catch (error) {
+                console.error('Failed to load used ports:', error);
+            }
+        }
+        
+        // Load existing configurations from the API
+        async function loadExistingConfs() {
+            try {
+                const response = await fetch('/api/existing-confs');
+                const data = await response.json();
+                if (data.existing_confs) {
+                    existingConfs = data.existing_confs;
+                }
+            } catch (error) {
+                // fail silently
+            }
+        }
+        
+        // Validate port input in real-time
+        function validatePort(input) {
+            const port = parseInt(input.value);
+            const errorDiv = document.getElementById(input.id + '_error');
+            let isValid = true;
+            let errorMessage = '';
+            
+            // Check if empty
+            if (!input.value) {
+                isValid = false;
+                errorMessage = 'Port number is required';
+            }
+            // Check if it's a valid number
+            else if (isNaN(port)) {
+                isValid = false;
+                errorMessage = 'Port must be a valid number';
+            }
+            // Check range
+            else if (port < 5040 || port > 5100) {
+                isValid = false;
+                errorMessage = 'Port must be between 5040 and 5100';
+            }
+            // Check if port is already in use
+            else if (usedPorts.includes(port)) {
+                isValid = false;
+                errorMessage = `Port ${port} is already in use by another log source`;
+            }
+            
+            // Update UI
+            if (isValid) {
+                input.classList.remove('is-invalid');
+                input.classList.add('is-valid');
+                if (errorDiv) {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                }
+            } else {
+                input.classList.remove('is-valid');
+                input.classList.add('is-invalid');
+                if (errorDiv) {
+                    errorDiv.textContent = errorMessage;
+                    errorDiv.style.display = 'block';
+                }
+            }
+            
+            return isValid;
+        }
+        
+        // Show dropdown when input is focused
+        function showDropdown(inputId, dropdownId) {
+            const input = document.getElementById(inputId);
+            const dropdown = document.getElementById(dropdownId);
+            const searchTerm = input.value.trim();
+            
+            // If there's text in the input, filter options
+            if (searchTerm && searchTerm !== 'Select a log source...') {
+                filterAndShowOptions(inputId, dropdownId);
+            } else {
+                // Show all options if input is empty
+                dropdown.classList.add('show');
+                const options = dropdown.querySelectorAll('.option');
+                options.forEach(option => {
+                    option.style.display = '';
+                    option.classList.remove('highlighted');
+                });
+            }
+        }
+        
+        // Hide dropdown when input loses focus
+        function hideDropdown(dropdownId) {
+            setTimeout(() => {
+                const dropdown = document.getElementById(dropdownId);
+                dropdown.classList.remove('show');
+            }, 200); // Small delay to allow clicking on options
+        }
+        
+        // Filter and show options based on input
+        function filterAndShowOptions(inputId, dropdownId) {
+            const input = document.getElementById(inputId);
+            const dropdown = document.getElementById(dropdownId);
+            const searchTerm = input.value.toLowerCase();
+            const options = dropdown.querySelectorAll('.option');
+            const hiddenInput = document.getElementById(inputId.replace('_input', '_name'));
+            
+            let hasVisibleOptions = false;
+            let hasExactMatch = false;
+            
+            options.forEach(option => {
+                const optionText = option.textContent.toLowerCase();
+                const optionValue = option.getAttribute('data-value').toLowerCase();
+                
+                // Always show the first option (placeholder)
+                if (option.getAttribute('data-value') === '') {
+                    option.style.display = '';
+                    hasVisibleOptions = true;
+                    return;
+                }
+                
+                // Show if search term matches option text or value
+                if (optionText.includes(searchTerm) || optionValue.includes(searchTerm)) {
+                    option.style.display = '';
+                    option.classList.add('highlighted');
+                    hasVisibleOptions = true;
+                    
+                    // Check for exact match
+                    if (optionText === searchTerm || optionValue === searchTerm) {
+                        hasExactMatch = true;
+                    }
+                } else {
+                    option.style.display = 'none';
+                    option.classList.remove('highlighted');
+                }
+            });
+            
+            // Show dropdown if there are visible options
+            if (hasVisibleOptions) {
+                dropdown.classList.add('show');
+            } else {
+                dropdown.classList.remove('show');
+            }
+            
+            // Update hidden input with current value (custom or selected)
+            if (searchTerm && searchTerm !== 'select a log source...') {
+                hiddenInput.value = searchTerm;
+                validateLogSourceName(hiddenInput);
+            }
+        }
+        
+        // Select an option from the dropdown
+        function selectOption(inputId, value, displayText) {
+            const input = document.getElementById(inputId);
+            const dropdown = document.getElementById(inputId.replace('_input', '_dropdown'));
+            const hiddenInput = document.getElementById(inputId.replace('_input', '_name'));
+            
+            input.value = displayText;
+            hiddenInput.value = value;
+            dropdown.classList.remove('show');
+            
+            // Validate the selected value
+            if (value) {
+                validateLogSourceName(hiddenInput);
+            }
+        }
+        
+        // Validate log source name in real-time
+        function validateLogSourceName(input) {
+            const value = input.value.trim().toLowerCase();
+            const inputId = input.id;
+            const mainInput = document.getElementById(inputId.replace('_name', '_input'));
+            const errorDiv = document.getElementById(inputId + '_error');
+            let isValid = true;
+            let errorMessage = '';
+            
+            // Convert to lowercase as user types
+            if (input.value !== value) {
+                input.value = value;
+                if (mainInput) {
+                    mainInput.value = value;
+                }
+            }
+            
+            // Check if empty
+            if (!value) {
+                isValid = false;
+                errorMessage = 'Log source name cannot be empty';
+            }
+            // Check length
+            else if (value.length < 2) {
+                isValid = false;
+                errorMessage = 'Log source name must be at least 2 characters long';
+            }
+            else if (value.length > 100) {
+                isValid = false;
+                errorMessage = 'Log source name cannot exceed 100 characters';
+            }
+            // Check pattern
+            else if (!/^[a-z0-9_-]+$/.test(value)) {
+                isValid = false;
+                errorMessage = 'Only lowercase letters, numbers, underscores, and hyphens are allowed';
+            }
+            // Check for reserved words
+            else if (["input", "output", "filter", "logstash", "opensearch", "wazuh", "ossec"].includes(value)) {
+                isValid = false;
+                errorMessage = `"${value}" is a reserved word and cannot be used`;
+            }
+            // Check for problematic patterns
+            else if (value.startsWith('-') || value.endsWith('-')) {
+                isValid = false;
+                errorMessage = 'Log source name cannot start or end with a hyphen';
+            }
+            else if (value.startsWith('_') || value.endsWith('_')) {
+                isValid = false;
+                errorMessage = 'Log source name cannot start or end with an underscore';
+            }
+            else if (/[_-]{2,}/.test(value)) {
+                isValid = false;
+                errorMessage = 'Log source name cannot contain consecutive hyphens or underscores';
+            }
+            // Check for config file conflict
+            else if (existingConfs.includes(sanitizeFilename(value))) {
+                isValid = false;
+                errorMessage = 'A configuration for this log source already exists.';
+            }
+            
+            // Update UI - apply validation to main input field
+            if (mainInput) {
+                if (isValid) {
+                    mainInput.classList.remove('is-invalid');
+                    mainInput.classList.add('is-valid');
+                } else {
+                    mainInput.classList.remove('is-valid');
+                    mainInput.classList.add('is-invalid');
+                }
+            }
+            
+            if (errorDiv) {
+                if (isValid) {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                } else {
+                    errorDiv.textContent = errorMessage;
+                    errorDiv.style.display = 'block';
+                }
+            }
+            
+            return isValid;
+        }
+        
+        // Add sanitizeFilename for frontend
+        function sanitizeFilename(name) {
+            return name.replace(/[^a-zA-Z0-9_\-\.]+/g, '_');
+        }
+        
+        // Validate form before submission
+        function validateForm(formId) {
+            const form = document.getElementById(formId);
+            const logSourceInput = form.querySelector('input[name="log_source_name"]');
+            let isValid = true;
+            
+            // Validate log source name
+            if (logSourceInput && logSourceInput.style.display !== 'none') {
+                if (!validateLogSourceName(logSourceInput)) {
+                    isValid = false;
+                }
+            }
+            
+            // Validate port number
+            const portInput = form.querySelector('input[name="http_port"]');
+            if (portInput && portInput.value) {
+                if (!validatePort(portInput)) {
+                    isValid = false;
+                }
+            }
+            
+            // Validate sample logs
+            const logsInput = form.querySelector('textarea[name="sample_logs"]');
+            if (logsInput && logsInput.value.trim()) {
+                const lines = logsInput.value.trim().split('\n').filter(line => line.trim());
+                if (lines.length === 0) {
+                    logsInput.classList.add('is-invalid');
+                    isValid = false;
+                } else if (lines.length > 50) {
+                    logsInput.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    logsInput.classList.remove('is-invalid');
+                    logsInput.classList.add('is-valid');
+                }
+            }
+            
+            // Validate file upload
+            const fileInput = form.querySelector('input[type="file"]');
+            if (fileInput && fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const allowedTypes = ['.csv', '.log', '.json', '.txt'];
+                const fileName = file.name.toLowerCase();
+                const isValidFile = allowedTypes.some(type => fileName.endsWith(type));
+                
+                if (!isValidFile) {
+                    fileInput.classList.add('is-invalid');
+                    isValid = false;
+                } else {
+                    fileInput.classList.remove('is-invalid');
+                    fileInput.classList.add('is-valid');
+                }
+            }
+            
+            return isValid;
+        }
+        
+        // Add form validation to submit events
+        document.getElementById('generate-form').addEventListener('submit', function(e) {
+            if (!validateForm('generate-form')) {
+                e.preventDefault();
+                alert('Please fix the validation errors before submitting.');
+                return false;
+            }
+            document.querySelector('.loader').style.display = 'inline-block';
+        });
+        
+        document.getElementById('upload-form').addEventListener('submit', function(e) {
+            if (!validateForm('upload-form')) {
+                e.preventDefault();
+                alert('Please fix the validation errors before submitting.');
+                return false;
+            }
+            const uploadButton = this.querySelector('.generate-button');
+            setButtonLoading(uploadButton, true);
+        });
+    </script>
+</body>
+</html>
+
