@@ -21,7 +21,7 @@ class Config:
     LOGSTASH_CONFIG_DIR: str = os.getenv("LOGSTASH_CONFIG_DIR", "/etc/logstash/conf.d")
     LOGSTASH_RELOAD_COMMAND: str = os.getenv("LOGSTASH_RELOAD_COMMAND", "sudo systemctl restart logstash")
     LOGSTASH_BIN_PATH: str = os.getenv("LOGSTASH_BIN_PATH", "/usr/share/logstash/bin/logstash")
-    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
+    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "AIzaSyAcimyKy-H66wNAQ78HxmalH_4OpCX3mb8")
     MAX_LOG_LINES: int = int(os.getenv("MAX_LOG_LINES", "50"))
     MAX_LOG_LINE_LENGTH: int = int(os.getenv("MAX_LOG_LINE_LENGTH", "1000"))
     REQUEST_TIMEOUT: int = int(os.getenv("REQUEST_TIMEOUT", "60"))
@@ -276,42 +276,33 @@ def test_filter_with_logs(filter_block: str, sample_logs: List[str]) -> Dict[str
 input {{
   stdin {{ }}
 }}
-
 {filter_block}
-
 output {{
   stdout {{ codec => rubydebug }}
 }}
 """
-
     temp_path = f"/tmp/test_filter_{hashlib.md5(filter_block.encode()).hexdigest()[:8]}.conf"
     temp_data_dir = f"/tmp/logstash_test_data"
-
     try:
         # Create temporary data directory
         os.makedirs(temp_data_dir, exist_ok=True)
-
         # Write test config
         with open(temp_path, 'w') as f:
             f.write(test_config)
-
         # Test config syntax without running Logstash
         test_cmd = f"sudo -u logstash {config.LOGSTASH_BIN_PATH} --path.settings /etc/logstash -t -f {temp_path}"
         test_ok, test_output = run_command(test_cmd)
-
         if not test_ok:
             return {
                 'success': False,
                 'error': 'Configuration syntax error',
                 'details': test_output
             }
-
         return {
             'success': True,
             'output': 'Filter syntax is valid. Configuration can be applied safely.',
             'error': None
         }
-
     except Exception as e:
         return {
             'success': False,
